@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: laravel-breeze-app
+    env: docker
+    buildCommand: "docker build -t laravel-breeze-app ."
+    startCommand: "docker run -p 8080:80 --log-driver json-file laravel-breeze-app"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: base64:xL42zCmPgIDK69zKZyCOKsqCbVDqgpqp6Z+dhmqpZPs=
+      - key: APP_DEBUG
+        value: "true"
+      - key: APP_URL
+        value: https://twitter-12ur.onrender.com
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-cglen7e4dad69r7toqsg-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: laravel_dpqr
+      - key: DB_USERNAME
+        value: laravel_dpqr_user
+      - key: DB_PASSWORD
+        value: Nv4t50GxE33dirTft5a8Aqv91MKWytVp
+      - key: LOG_CHANNEL
+        value: stack
+      - key: LOG_LEVEL
+        value: debug
+      - key: LOG_DEPRECATIONS_CHANNEL
+        value: null
+
+databases:
+  - name: laravel
+    engine: postgres
+    version: "15"
+    username: laravel_dpqr_user
+    password: Nv4t50GxE33dirTft5a8Aqv91MKWytVp
+    port: 5432
+    database: laravel_dpqr
